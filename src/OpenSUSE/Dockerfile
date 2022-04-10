@@ -8,6 +8,7 @@ RUN zypper --non-interactive update
 RUN zypper --non-interactive install R-base
 RUN zypper --non-interactive install ack
 RUN zypper --non-interactive install bash-completion
+RUN zypper --non-interactive install findutils
 RUN zypper --non-interactive install gcc
 RUN zypper --non-interactive install git
 RUN zypper --non-interactive install man
