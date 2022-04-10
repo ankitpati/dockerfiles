@@ -1,5 +1,8 @@
 FROM opensuse/tumbleweed
 
+RUN sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' \
+        -i /etc/zypp/zypp.conf
+
 RUN zypper --non-interactive update
 
 RUN zypper --non-interactive install ack
