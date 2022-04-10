@@ -3,6 +3,7 @@ FROM opensuse/tumbleweed
 RUN zypper --non-interactive update
 
 RUN zypper --non-interactive install ack
+RUN zypper --non-interactive install gcc
 RUN zypper --non-interactive install git
 RUN zypper --non-interactive install moreutils
 RUN zypper --non-interactive install tmux
