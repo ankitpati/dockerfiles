@@ -8,6 +8,7 @@ RUN zypper --non-interactive install moreutils
 RUN zypper --non-interactive install tmux
 RUN zypper --non-interactive install tree
 RUN zypper --non-interactive install vim
+RUN zypper --non-interactive install vim-data
 
 RUN \
     git clone 'https://gitlab.com/ankitpati/dotfiles.git' && \
