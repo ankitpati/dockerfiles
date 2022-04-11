@@ -5,6 +5,7 @@ RUN sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' \
 
 RUN zypper --non-interactive update
 
+RUN zypper --non-interactive install R-base
 RUN zypper --non-interactive install ack
 RUN zypper --non-interactive install bash-completion
 RUN zypper --non-interactive install gcc
