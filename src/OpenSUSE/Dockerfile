@@ -6,7 +6,6 @@ RUN sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' \
 RUN zypper --non-interactive update
 
 RUN zypper --non-interactive install \
-    R-base \
     ack \
     bash-completion \
     findutils \
@@ -19,6 +18,10 @@ RUN zypper --non-interactive install \
     tree \
     vim \
     vim-data \
+;
+
+RUN zypper --non-interactive install \
+    R-base \
 ;
 
 RUN \
