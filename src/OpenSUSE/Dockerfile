@@ -3,6 +3,8 @@ FROM opensuse/tumbleweed
 RUN sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' \
         -i /etc/zypp/zypp.conf
 
+RUN zypper addrepo https://download.opensuse.org/debug/tumbleweed/repo/oss/ debuginfo
+
 RUN zypper --non-interactive update
 
 RUN zypper --non-interactive install \
@@ -10,7 +12,9 @@ RUN zypper --non-interactive install \
     bash-completion \
     findutils \
     gcc \
+    gdb \
     git \
+    glibc-debuginfo \
     man \
     man-pages \
     moreutils \
