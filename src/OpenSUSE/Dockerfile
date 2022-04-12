@@ -19,6 +19,7 @@ RUN zypper --non-interactive install \
     man \
     man-pages \
     moreutils \
+    terminfo \
     tmux \
     tree \
     vim \
