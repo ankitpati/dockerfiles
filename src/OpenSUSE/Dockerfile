@@ -10,6 +10,7 @@ RUN zypper --non-interactive update
 RUN zypper --non-interactive install \
     ack \
     bash-completion \
+    dos2unix \
     findutils \
     gcc \
     gdb \
