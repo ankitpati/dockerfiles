@@ -21,6 +21,9 @@ RUN zypper --non-interactive install \
     man \
     man-pages \
     moreutils \
+    perl-Term-ReadLine-Gnu \
+    python3 \
+    readline-devel \
     terminfo \
     tmux \
     tree \
