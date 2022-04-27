@@ -16,6 +16,7 @@ RUN zypper --non-interactive install \
     gdb \
     git \
     glibc-debuginfo \
+    java-devel \
     man \
     man-pages \
     moreutils \
