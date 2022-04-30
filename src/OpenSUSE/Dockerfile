@@ -5,9 +5,11 @@ RUN sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' \
 
 RUN find /etc/zypp/repos.d/ -type f -exec sed -i -E 's,\bhttp://,https://,g' {} +
 
-RUN zypper addrepo https://download.opensuse.org/debug/tumbleweed/repo/oss/ debuginfo
+RUN zypper addrepo -f https://download.opensuse.org/debug/tumbleweed/repo/oss/ debuginfo
 
-RUN zypper --non-interactive update
+RUN zypper addrepo -fp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+
+RUN zypper --gpg-auto-import-keys --non-interactive update
 
 RUN zypper --non-interactive install \
     ack \
