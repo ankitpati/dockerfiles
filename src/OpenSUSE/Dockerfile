@@ -9,7 +9,9 @@ RUN \
 
 RUN zypper --non-interactive install \
     ack \
+    aria2 \
     bash-completion \
+    curl \
     dos2unix \
     findutils \
     gcc \
