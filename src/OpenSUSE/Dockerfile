@@ -3,6 +3,8 @@ FROM opensuse/tumbleweed
 RUN sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' \
         -i /etc/zypp/zypp.conf
 
+RUN find /etc/zypp/repos.d/ -type f -exec sed -i -E 's,\bhttp://,https://,g' {} +
+
 RUN zypper addrepo https://download.opensuse.org/debug/tumbleweed/repo/oss/ debuginfo
 
 RUN zypper --non-interactive update
