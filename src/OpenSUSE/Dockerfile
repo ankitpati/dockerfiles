@@ -1,11 +1,11 @@
 FROM opensuse/tumbleweed
 
 RUN \
-    sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' -i /etc/zypp/zypp.conf; \
-    find /etc/zypp/repos.d/ -type f -exec sed -i -E 's,\bhttp://,https://,g' {} +; \
-    zypper addrepo -f https://download.opensuse.org/debug/tumbleweed/repo/oss/ debuginfo; \
-    zypper addrepo -fp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman; \
-    zypper --gpg-auto-import-keys --non-interactive update
+    sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' -i /etc/zypp/zypp.conf && \
+    ( cd /etc/zypp/repos.d/ && ls | while read -r repofile; do sed -i -E 's,\bhttp://,https://,g' "$repofile"; done ) && \
+    zypper addrepo -fp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman && \
+    zypper --gpg-auto-import-keys --non-interactive update && \
+true
 
 RUN zypper --non-interactive install \
     ack \
@@ -40,8 +40,9 @@ RUN zypper --non-interactive install \
 RUN \
     git clone 'https://gitlab.com/ankitpati/dotfiles.git' && \
     make -C dotfiles/ install && \
-    rm -rf dotfiles/; \
+    rm -rf dotfiles/ && \
     \
     git clone 'https://gitlab.com/ankitpati/scripts.git' && \
     make -C scripts/ install && \
-    rm -rf scripts/
+    rm -rf scripts/ && \
+true
