@@ -27,6 +27,7 @@ RUN zypper --non-interactive install \
     perl-Term-ReadLine-Gnu \
     python3 \
     readline-devel \
+    tar \
     terminfo \
     tmux \
     tree \
