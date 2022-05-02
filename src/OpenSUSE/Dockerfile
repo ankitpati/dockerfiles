@@ -12,6 +12,7 @@ RUN zypper --non-interactive install \
     ack \
     aria2 \
     bash-completion \
+    brotli \
     curl \
     dos2unix \
     findutils \
