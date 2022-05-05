@@ -10,7 +10,6 @@ RUN \
         --allow-vendor-change \
         --auto-agree-with-licenses \
         --force-resolution \
-        --recommends \
     && \
 true
 
@@ -19,7 +18,6 @@ RUN zypper --non-interactive install \
     --allow-vendor-change \
     --auto-agree-with-licenses \
     --force-resolution \
-    --recommends \
         ack \
         aria2 \
         bash-completion \
@@ -52,7 +50,6 @@ RUN zypper --non-interactive install \
     --allow-vendor-change \
     --auto-agree-with-licenses \
     --force-resolution \
-    --recommends \
         R-base \
 ;
 
