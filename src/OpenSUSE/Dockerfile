@@ -34,7 +34,9 @@ RUN zypper --non-interactive install \
         man \
         man-pages \
         moreutils \
+        perl-Modern-Perl \
         perl-Term-ReadLine-Gnu \
+        perl-doc \
         python3 \
         readline-devel \
         tar \
