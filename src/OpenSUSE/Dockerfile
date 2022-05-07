@@ -26,10 +26,13 @@ RUN zypper --non-interactive install \
         dos2unix \
         findutils \
         gcc \
+        gcc-c++ \
         gdb \
         git \
         glibc-debuginfo \
         java-devel \
+        libgcc_s1-debuginfo \
+        libstdc++6-debuginfo \
         make \
         man \
         man-pages \
