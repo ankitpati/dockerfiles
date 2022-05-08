@@ -59,11 +59,21 @@ RUN zypper --non-interactive install \
 ;
 
 RUN \
-    git clone 'https://gitlab.com/ankitpati/dotfiles.git' && \
-    make -C dotfiles/ install && \
-    rm -rf dotfiles/ && \
-    \
     git clone 'https://gitlab.com/ankitpati/scripts.git' && \
     make -C scripts/ install && \
     rm -rf scripts/ && \
+true
+
+ARG username=ankitpati
+
+RUN useradd "$username"
+
+USER $username
+
+WORKDIR /home/$username
+
+RUN \
+    git clone 'https://gitlab.com/ankitpati/dotfiles.git' && \
+    make -C dotfiles/ install && \
+    rm -rf dotfiles/ && \
 true
