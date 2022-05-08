@@ -1,4 +1,5 @@
 FROM opensuse/tumbleweed
+LABEL org.opencontainers.image.authors="Ankit Pati <contact@ankitpati.in>"
 
 SHELL ["bash", "-c"]
 
