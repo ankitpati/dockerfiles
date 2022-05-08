@@ -1,5 +1,8 @@
 FROM opensuse/tumbleweed
+
 LABEL org.opencontainers.image.authors="Ankit Pati <contact@ankitpati.in>"
+LABEL org.opencontainers.image.source="https://gitlab.com/ankitpati/dockerfiles/-/raw/main/src/OpenSUSE/Dockerfile"
+LABEL org.opencontainers.image.licenses="GPL-3.0+"
 
 SHELL ["bash", "-c"]
 
