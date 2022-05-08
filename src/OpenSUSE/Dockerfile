@@ -1,5 +1,7 @@
 FROM opensuse/tumbleweed
 
+SHELL ["bash", "-c"]
+
 RUN \
     sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' -i /etc/zypp/zypp.conf && \
     ( cd /etc/zypp/repos.d/ && ls | while read -r repofile; do sed -i -E 's,\bhttp://,https://,g' "$repofile"; done ) && \
