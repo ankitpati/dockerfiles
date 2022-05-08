@@ -4,8 +4,6 @@ LABEL org.opencontainers.image.authors="Ankit Pati <contact@ankitpati.in>"
 LABEL org.opencontainers.image.source="https://gitlab.com/ankitpati/dockerfiles/-/raw/main/src/OpenSUSE/Dockerfile"
 LABEL org.opencontainers.image.licenses="GPL-3.0+"
 
-SHELL ["bash", "-c"]
-
 RUN \
     sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' -i /etc/zypp/zypp.conf && \
     ( cd /etc/zypp/repos.d/ && ls | while read -r repofile; do sed -i -E 's,\bhttp://,https://,g' "$repofile"; done ) && \
