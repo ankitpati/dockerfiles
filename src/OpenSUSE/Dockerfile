@@ -67,6 +67,10 @@ RUN \
     git clone 'https://gitlab.com/ankitpati/scripts.git' && \
     make -C scripts/ install && \
     rm -rf scripts/ && \
+    \
+    git clone 'https://github.com/vlad2/git-sh.git' && \
+    make -C git-sh/ install && \
+    rm -rf git-sh/ && \
 true
 
 ARG username=ankitpati
