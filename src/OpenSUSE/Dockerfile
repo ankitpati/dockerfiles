@@ -26,6 +26,7 @@ RUN zypper --non-interactive install \
         aria2 \
         bash-completion \
         brotli \
+        coreutils-doc \
         curl \
         dos2unix \
         findutils \
