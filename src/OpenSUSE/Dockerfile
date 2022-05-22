@@ -36,6 +36,7 @@ RUN zypper --non-interactive install \
         git-delta \
         glibc-debuginfo \
         java-devel \
+        jq \
         libgcc_s1-debuginfo \
         libstdc++6-debuginfo \
         make \
