@@ -49,6 +49,7 @@ RUN zypper --non-interactive install \
         perl-doc \
         python3 \
         readline-devel \
+        shadow \
         tar \
         terminfo \
         tmux \
