@@ -54,6 +54,7 @@ RUN zypper --no-refresh --non-interactive install \
         python3 \
         readline-devel \
         shadow \
+        strace \
         tar \
         terminfo \
         tmux \
