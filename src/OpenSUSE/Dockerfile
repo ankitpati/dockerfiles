@@ -26,6 +26,8 @@ RUN zypper --no-refresh --non-interactive install \
         aria2 \
         bash-completion \
         brotli \
+        clang \
+        clang-devel \
         coreutils-doc \
         curl \
         dos2unix \
