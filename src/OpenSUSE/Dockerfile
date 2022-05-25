@@ -36,6 +36,8 @@ RUN zypper --non-interactive install \
         git \
         git-delta \
         glibc-debuginfo \
+        go \
+        go-doc \
         java-devel \
         jq \
         libgcc_s1-debuginfo \
