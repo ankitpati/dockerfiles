@@ -17,7 +17,7 @@ RUN \
     && \
 true
 
-RUN zypper --non-interactive install \
+RUN zypper --no-refresh --non-interactive install \
     --allow-name-change \
     --allow-vendor-change \
     --auto-agree-with-licenses \
@@ -60,7 +60,7 @@ RUN zypper --non-interactive install \
         vim-data \
 ;
 
-RUN zypper --non-interactive install \
+RUN zypper --no-refresh --non-interactive install \
     --allow-name-change \
     --allow-vendor-change \
     --auto-agree-with-licenses \
