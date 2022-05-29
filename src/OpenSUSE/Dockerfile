@@ -25,12 +25,14 @@ RUN zypper --no-refresh --non-interactive install \
         ack \
         aria2 \
         bash-completion \
+        bat \
         brotli \
         clang \
         clang-devel \
         coreutils-doc \
         curl \
         dos2unix \
+        fd \
         findutils \
         gcc \
         gcc-c++ \
@@ -38,6 +40,7 @@ RUN zypper --no-refresh --non-interactive install \
         git \
         git-delta \
         glibc-debuginfo \
+        gnu_parallel \
         go \
         go-doc \
         java-devel \
@@ -53,6 +56,8 @@ RUN zypper --no-refresh --non-interactive install \
         perl-doc \
         python3 \
         readline-devel \
+        ripgrep \
+        ruby \
         shadow \
         strace \
         tar \
@@ -84,6 +89,10 @@ true
 ARG username=ankitpati
 
 RUN useradd "$username"
+
+RUN bash <(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+
+RUN chown "$username:$username" -hR /home/linuxbrew/.linuxbrew/
 
 USER $username
 
