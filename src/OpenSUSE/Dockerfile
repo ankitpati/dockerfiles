@@ -87,16 +87,22 @@ RUN \
 true
 
 ARG username=ankitpati
+ARG brew_prefix=/home/linuxbrew/.linuxbrew
 
-RUN useradd "$username"
-
-RUN bash <(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-
-RUN chown "$username:$username" -hR /home/linuxbrew/.linuxbrew/
+RUN \
+    useradd "$username" && \
+    mkdir -p "$brew_prefix" && \
+    chmod 0700 "$brew_prefix" && \
+    chown "$username:$username" "$brew_prefix" && \
+true
 
 USER $username
 
 WORKDIR /home/$username
+
+RUN bash <(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \
+           | perl -0pE 's/^have_sudo_access\(\) {.*?^}/have_sudo_access() { HAVE_SUDO_ACCESS=0; return 0; }/sm' \
+           | perl -0pE 's/^execute_sudo\(\) {.*?^}/execute_sudo() { ohai "\$\@"; execute "\$\@"; }/sm')
 
 RUN \
     git clone 'https://gitlab.com/ankitpati/dotfiles.git' && \
