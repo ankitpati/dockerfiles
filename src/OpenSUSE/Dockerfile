@@ -117,3 +117,5 @@ RUN \
         brew upgrade && \
     true' && \
 true
+
+ENTRYPOINT ["bash", "-l"]
