@@ -77,10 +77,6 @@ RUN zypper --no-refresh --non-interactive install \
 ;
 
 RUN \
-    git clone 'https://gitlab.com/ankitpati/scripts.git' && \
-    make -C scripts/ install && \
-    rm -rf scripts/ && \
-    \
     git clone 'https://github.com/vlad2/git-sh.git' && \
     make -C git-sh/ install && \
     rm -rf git-sh/ && \
@@ -104,10 +100,16 @@ RUN \
     git clone 'https://gitlab.com/ankitpati/dotfiles.git' && \
     make -C dotfiles/ install && \
     rm -rf dotfiles/ && \
+    \
+    git clone 'https://gitlab.com/ankitpati/scripts.git' && \
+    make -C scripts/ install && \
+    rm -rf scripts/ && \
+    \
     bash -l \
         <(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \
           | perl -0pE 's/^have_sudo_access\(\) {.*?^}/have_sudo_access() { HAVE_SUDO_ACCESS=0; return 0; }/sm' \
           | perl -0pE 's/^execute_sudo\(\) {.*?^}/execute_sudo() { ohai "\$\@"; execute "\$\@"; }/sm') && \
+    \
     bash -lc '\
         brew analytics off && \
         brew developer on && \
