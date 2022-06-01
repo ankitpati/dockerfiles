@@ -24,6 +24,7 @@ RUN zypper --no-refresh --non-interactive install \
     --force-resolution \
         ack \
         aria2 \
+        astyle \
         bash-completion \
         bat \
         brotli \
@@ -43,6 +44,7 @@ RUN zypper --no-refresh --non-interactive install \
         gnu_parallel \
         go \
         go-doc \
+        indent \
         java-devel \
         jq \
         libgcc_s1-debuginfo \
@@ -51,7 +53,10 @@ RUN zypper --no-refresh --non-interactive install \
         man \
         man-pages \
         moreutils \
+        perl-App-cpanminus \
         perl-Modern-Perl \
+        perl-Perl-Critic \
+        perl-Perl-Tidy \
         perl-Term-ReadLine-Gnu \
         perl-doc \
         python3 \
@@ -62,10 +67,12 @@ RUN zypper --no-refresh --non-interactive install \
         strace \
         tar \
         terminfo \
+        tidy \
         tmux \
         tree \
         vim \
         vim-data \
+        yasm \
 ;
 
 RUN zypper --no-refresh --non-interactive install \
@@ -116,6 +123,14 @@ RUN \
         brew update && \
         brew upgrade && \
     true' && \
+true
+
+RUN \
+    bash -lc '\
+        brew install \
+            kotlin \
+            swift \
+    ;' && \
 true
 
 ENTRYPOINT ["bash", "-l"]
