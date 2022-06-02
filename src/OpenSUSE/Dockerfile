@@ -28,6 +28,7 @@ RUN zypper --no-refresh --non-interactive install \
         bash-completion \
         bat \
         brotli \
+        cargo \
         clang \
         clang-devel \
         coreutils-doc \
@@ -55,6 +56,7 @@ RUN zypper --no-refresh --non-interactive install \
         moreutils \
         perl-App-cpanminus \
         perl-Modern-Perl \
+        perl-Module-Signature \
         perl-Perl-Critic \
         perl-Perl-Tidy \
         perl-Term-ReadLine-Gnu \
@@ -63,6 +65,7 @@ RUN zypper --no-refresh --non-interactive install \
         readline-devel \
         ripgrep \
         ruby \
+        rust \
         shadow \
         strace \
         tar \
@@ -128,8 +131,10 @@ true
 RUN \
     bash -lc '\
         brew install \
-            kotlin \
-            swift \
+            shellharden \
+    && \
+        cpanm \
+            Digest::SHA \
     ;' && \
 true
 
