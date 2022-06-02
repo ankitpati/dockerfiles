@@ -135,6 +135,7 @@ RUN \
     && \
         cpanm \
             Digest::SHA \
+    && B-clean-cache \
     ;' && \
 true
 
