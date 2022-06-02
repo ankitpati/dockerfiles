@@ -49,6 +49,7 @@ RUN zypper --no-refresh --non-interactive install \
         java-devel \
         jq \
         libgcc_s1-debuginfo \
+        libopenssl-devel \
         libstdc++6-debuginfo \
         make \
         man \
