@@ -124,13 +124,13 @@ RUN \
     bash -lc '\
         brew analytics off && \
         brew developer on && \
-        brew update && \
-        brew upgrade && \
     true' && \
 true
 
 RUN \
     bash -lc '\
+        brew update && \
+        brew upgrade && \
         brew install \
             shellharden \
     && \
