@@ -102,7 +102,7 @@ USER $username
 WORKDIR /home/$username
 
 RUN \
-    git clone 'https://github.com/vlad2/git-sh.git' && \
+    git clone 'https://gitlab.com/ankitpati/git-sh.git' && \
     make -C git-sh/ PREFIX='$(HOME)/.local' install && \
     rm -rf git-sh/ && \
     \
