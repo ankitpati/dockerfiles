@@ -102,15 +102,15 @@ USER $username
 WORKDIR /home/$username
 
 RUN \
-    git clone 'https://gitlab.com/ankitpati/git-sh.git' && \
+    git clone --depth=1 'https://gitlab.com/ankitpati/git-sh.git' && \
     make -C git-sh/ PREFIX='$(HOME)/.local' install && \
     rm -rf git-sh/ && \
     \
-    git clone 'https://gitlab.com/ankitpati/dotfiles.git' && \
+    git clone --depth=1 'https://gitlab.com/ankitpati/dotfiles.git' && \
     make -C dotfiles/ install && \
     rm -rf dotfiles/ && \
     \
-    git clone 'https://gitlab.com/ankitpati/scripts.git' && \
+    git clone --depth=1 'https://gitlab.com/ankitpati/scripts.git' && \
     make -C scripts/ install && \
     rm -rf scripts/ && \
     \
