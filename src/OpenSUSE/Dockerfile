@@ -135,6 +135,7 @@ RUN \
     && \
         cpanm \
             Digest::SHA \
+            Unicode::GCString \
     && B-clean-cache \
     ;' && \
 true
