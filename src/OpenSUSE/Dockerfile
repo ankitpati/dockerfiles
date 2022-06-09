@@ -56,6 +56,7 @@ RUN zypper --no-refresh --non-interactive install \
         man-pages \
         moreutils \
         perl-App-cpanminus \
+        perl-LWP-Protocol-https \
         perl-Modern-Perl \
         perl-Module-Signature \
         perl-Perl-Critic \
