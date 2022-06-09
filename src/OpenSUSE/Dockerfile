@@ -63,6 +63,7 @@ RUN zypper --no-refresh --non-interactive install \
         perl-Term-ReadLine-Gnu \
         perl-doc \
         python3 \
+        python3-pip \
         readline-devel \
         ripgrep \
         ruby \
