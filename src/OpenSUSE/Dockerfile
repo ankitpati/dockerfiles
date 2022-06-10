@@ -63,6 +63,7 @@ RUN zypper --no-refresh --non-interactive install \
         perl-Perl-Critic \
         perl-Perl-Tidy \
         perl-Term-ReadLine-Gnu \
+        perl-Unicode-LineBreak \
         perl-doc \
         python3 \
         python3-pip \
@@ -137,7 +138,6 @@ RUN \
     && \
         cpanm \
             Digest::SHA \
-            Unicode::GCString \
     && B-clean-cache \
     ;' && \
 true
