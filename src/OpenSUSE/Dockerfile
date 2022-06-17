@@ -22,6 +22,7 @@ RUN zypper --no-refresh --non-interactive install \
     --allow-vendor-change \
     --auto-agree-with-licenses \
     --force-resolution \
+        7zip \
         ack \
         aria2 \
         astyle \
@@ -78,9 +79,11 @@ RUN zypper --no-refresh --non-interactive install \
         tidy \
         tmux \
         tree \
+        unzip \
         vim \
         vim-data \
         yasm \
+        zip \
 ;
 
 RUN zypper --no-refresh --non-interactive install \
