@@ -132,17 +132,15 @@ RUN \
     true' && \
 true
 
-RUN \
-    bash -lc '\
-        brew update && \
-        brew upgrade && \
-        brew install \
-            shellharden \
-    && \
-        cpanm \
-            Digest::SHA \
-    && B-clean-cache \
-    ;' && \
-true
+RUN bash -lc '\
+    brew update && \
+    brew upgrade && \
+    brew install \
+        shellharden \
+&& \
+    cpanm \
+        Digest::SHA \
+&& B-clean-cache \
+'
 
 ENTRYPOINT ["bash", "-l"]
