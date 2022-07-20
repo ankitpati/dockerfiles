@@ -67,6 +67,7 @@ RUN zypper --no-refresh --non-interactive install \
         perl-Unicode-LineBreak \
         perl-doc \
         python3 \
+        python3-curses \
         python3-pip \
         python3-pylint \
         readline-devel \
