@@ -47,6 +47,7 @@ RUN zypper --no-refresh --non-interactive install \
         go \
         go-doc \
         indent \
+        iproute \
         java-devel \
         jq \
         libgcc_s1-debuginfo \
