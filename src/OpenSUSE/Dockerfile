@@ -60,6 +60,7 @@ RUN zypper --no-refresh --non-interactive install \
         man \
         man-pages \
         moreutils \
+        npm-default \
         perl-App-cpanminus \
         perl-File-Rename \
         perl-LWP-Protocol-https \
@@ -149,6 +150,9 @@ RUN bash -lc '\
 && \
     cpanm \
         Digest::SHA \
+&& \
+    npm install \
+        prettier \
 && B-clean-cache \
 '
 
