@@ -30,6 +30,7 @@ RUN zypper --no-refresh --non-interactive install \
         bat \
         brotli \
         cargo \
+        checkstyle \
         clang \
         clang-devel \
         coreutils-doc \
@@ -54,6 +55,7 @@ RUN zypper --no-refresh --non-interactive install \
         libgcc_s1-debuginfo \
         libopenssl-devel \
         libstdc++6-debuginfo \
+        libxml2-tools \
         make \
         man \
         man-pages \
@@ -69,6 +71,7 @@ RUN zypper --no-refresh --non-interactive install \
         perl-Unicode-LineBreak \
         perl-doc \
         python3 \
+        python3-black \
         python3-curses \
         python3-pip \
         python3-pylint \
@@ -76,7 +79,9 @@ RUN zypper --no-refresh --non-interactive install \
         ripgrep \
         ruby \
         rust \
+        scout-command-not-found \
         shadow \
+        shfmt \
         strace \
         tar \
         terminfo \
