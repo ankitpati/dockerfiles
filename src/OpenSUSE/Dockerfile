@@ -152,7 +152,7 @@ RUN bash -lc '\
         Digest::SHA \
 && \
     npm install --global npm && hash -r && \
-    npm install --global node && hash -r && \
+    npm install --global node && \
     npm install --global \
         prettier \
 && B-clean-cache \
