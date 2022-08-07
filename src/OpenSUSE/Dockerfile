@@ -8,7 +8,7 @@ RUN \
     sed 's/^rpm\.install\.excludedocs = yes$/rpm.install.excludedocs = no/g' -i /etc/zypp/zypp.conf && \
     ( cd /etc/zypp/repos.d/ && ls | while read -r repofile; do sed -i -E 's,\bhttp://,https://,g' "$repofile"; done ) && \
     zypper modifyrepo --enable repo-debug && \
-    zypper addrepo -fp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman && \
+    zypper addrepo -fp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' packman && \
     zypper --gpg-auto-import-keys --non-interactive dist-upgrade \
         --allow-name-change \
         --allow-vendor-change \
@@ -132,7 +132,7 @@ RUN \
     rm -rf scripts/ && \
     \
     bash -l \
-        <(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \
+        <(curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh' \
           | perl -0pE 's/^have_sudo_access\(\) {.*?^}/have_sudo_access() { HAVE_SUDO_ACCESS=0; return 0; }/sm' \
           | perl -0pE 's/^execute_sudo\(\) {.*?^}/execute_sudo() { ohai "\$\@"; execute "\$\@"; }/sm') && \
     \
