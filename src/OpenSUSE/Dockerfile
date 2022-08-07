@@ -132,6 +132,11 @@ RUN \
     make -C scripts/ install && \
     rm -rf scripts/ && \
     \
+    mkdir -p "$HOME/.postgresql/" && \
+    cat <(curl 'https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem') \
+        <(curl 'https://truststore.pki.us-gov-west-1.rds.amazonaws.com/global/global-bundle.pem') \
+        > "$HOME/.postgresql/root.crt" && \
+    \
     bash -l \
         <(curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh' \
           | perl -0pE 's/^have_sudo_access\(\) {.*?^}/have_sudo_access() { HAVE_SUDO_ACCESS=0; return 0; }/sm' \
