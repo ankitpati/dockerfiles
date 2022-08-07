@@ -74,6 +74,7 @@ RUN zypper --no-refresh --non-interactive install \
         python3 \
         python3-black \
         python3-curses \
+        python3-devel \
         python3-pip \
         python3-pylint \
         readline-devel \
