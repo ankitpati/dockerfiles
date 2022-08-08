@@ -71,6 +71,7 @@ RUN zypper --no-refresh --non-interactive install \
         perl-Term-ReadLine-Gnu \
         perl-Unicode-LineBreak \
         perl-doc \
+        postgresql \
         python3 \
         python3-black \
         python3-curses \
