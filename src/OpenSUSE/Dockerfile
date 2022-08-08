@@ -73,10 +73,12 @@ RUN zypper --no-refresh --non-interactive install \
         perl-doc \
         postgresql \
         python3 \
+        python3-Django \
         python3-black \
         python3-curses \
         python3-devel \
         python3-pip \
+        python3-psycopg2 \
         python3-pylint \
         readline-devel \
         ripgrep \
