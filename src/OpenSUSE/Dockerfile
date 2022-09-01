@@ -36,6 +36,7 @@ RUN zypper --no-refresh --non-interactive install \
         coreutils-doc \
         curl \
         dos2unix \
+        dwarves \
         fd \
         findutils \
         gcc \
