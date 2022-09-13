@@ -33,7 +33,7 @@ true
 
 USER root
 
-RUN chown "$USER:$USER" /usr/local/bin/
+RUN /usr/bin/chown "$USER:$USER" /usr/local/bin/
 
 USER $username
 
