@@ -34,6 +34,7 @@ RUN zypper --no-refresh --non-interactive install \
         clang \
         clang-devel \
         coreutils-doc \
+        csvprintf \
         curl \
         dos2unix \
         dwarves \
