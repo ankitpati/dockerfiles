@@ -23,6 +23,7 @@ RUN zypper --no-refresh --non-interactive install \
     --auto-agree-with-licenses \
     --force-resolution \
         7zip \
+        ImageMagick \
         ack \
         aria2 \
         astyle \
