@@ -145,6 +145,11 @@ RUN \
         <(curl 'https://truststore.pki.us-gov-west-1.rds.amazonaws.com/global/global-bundle.pem') \
         > "$HOME/.postgresql/root.crt" && \
     \
+    curl 'https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-405.0.0-linux-x86_64.tar.gz' \
+        | tar xz && \
+    google-cloud-sdk/install.sh --quiet --command-completion true --path-update true && \
+    bash -lc 'gcloud components update --quiet' && \
+    \
     bash -l \
         <(curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh' \
           | perl -0pE 's/^have_sudo_access\(\) {.*?^}/have_sudo_access() { HAVE_SUDO_ACCESS=0; return 0; }/sm' \
