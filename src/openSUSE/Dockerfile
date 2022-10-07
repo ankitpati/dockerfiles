@@ -55,6 +55,7 @@ RUN zypper --no-refresh --non-interactive install \
         iputils \
         java-devel \
         jq \
+        kubernetes-client \
         libgcc_s1-debuginfo \
         libopenssl-devel \
         libstdc++6-debuginfo \
@@ -93,6 +94,7 @@ RUN zypper --no-refresh --non-interactive install \
         strace \
         tar \
         terminfo \
+        terraform \
         tidy \
         tmux \
         tree \
