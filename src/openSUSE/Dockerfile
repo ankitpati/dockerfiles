@@ -66,6 +66,7 @@ RUN zypper --no-refresh --non-interactive install \
         man-pages \
         moreutils \
         npm-default \
+        openssl \
         perl-App-cpanminus \
         perl-File-Rename \
         perl-LWP-Protocol-https \
