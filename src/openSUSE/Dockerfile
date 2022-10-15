@@ -50,6 +50,7 @@ RUN zypper --no-refresh --non-interactive install \
         gnu_parallel \
         go \
         go-doc \
+        gzip \
         indent \
         iproute \
         iputils \
