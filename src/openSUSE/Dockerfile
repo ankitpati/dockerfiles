@@ -115,7 +115,7 @@ RUN zypper --no-refresh --non-interactive install \
         R-base \
 ;
 
-ARG username=ankitpati
+ARG username=tigress
 ARG brew_prefix=/home/linuxbrew/.linuxbrew
 
 RUN \
