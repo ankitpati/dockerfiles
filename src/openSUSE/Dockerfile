@@ -83,6 +83,7 @@ RUN zypper --no-refresh --non-interactive install \
         perl-Unicode-LineBreak \
         perl-doc \
         postgresql \
+        psmisc \
         python3 \
         python3-Django \
         python3-black \
