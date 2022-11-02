@@ -30,10 +30,13 @@ RUN zypper --no-refresh --non-interactive install \
         7zip \
         ImageMagick \
         ack \
+        ant \
+        apache-ivy \
         aria2 \
         astyle \
         bash-completion \
         bat \
+        bazel \
         brotli \
         cargo \
         checkstyle \
@@ -69,6 +72,7 @@ RUN zypper --no-refresh --non-interactive install \
         make \
         man \
         man-pages \
+        maven \
         moreutils \
         npm-default \
         openssl \
