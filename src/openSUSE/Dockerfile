@@ -38,6 +38,7 @@ RUN zypper --no-refresh --non-interactive install \
         bat \
         bazel \
         brotli \
+        buildah \
         cargo \
         checkstyle \
         clang \
@@ -86,6 +87,7 @@ RUN zypper --no-refresh --non-interactive install \
         perl-Term-ReadLine-Gnu \
         perl-Unicode-LineBreak \
         perl-doc \
+        podman \
         postgresql \
         psmisc \
         python3 \
@@ -103,6 +105,7 @@ RUN zypper --no-refresh --non-interactive install \
         scout-command-not-found \
         shadow \
         shfmt \
+        skopeo \
         strace \
         tar \
         terminfo \
