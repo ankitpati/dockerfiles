@@ -26,6 +26,7 @@ ARG java_version=19
 ARG libgcc_s_version=1
 ARG libstdcpp_version=6
 ARG libxml_version=2
+ARG openssl_version=3
 ARG psycopg_version=2
 ARG python_version=3
 
@@ -70,7 +71,7 @@ RUN zypper --no-refresh --non-interactive install \
         jq \
         kubernetes-client \
         libgcc_s"$libgcc_s_version"-debuginfo \
-        libopenssl-devel \
+        libopenssl-"$openssl_version"-devel \
         libstdc++"$libstdcpp_version"-debuginfo \
         libxml"$libxml_version"-tools \
         make \
@@ -78,7 +79,7 @@ RUN zypper --no-refresh --non-interactive install \
         man-pages \
         moreutils \
         npm-default \
-        openssl \
+        openssl-"$openssl_version" \
         perl-App-cpanminus \
         perl-File-Rename \
         perl-LWP-Protocol-https \
