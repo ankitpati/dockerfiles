@@ -37,17 +37,13 @@ RUN zypper --no-refresh --non-interactive install \
         7zip \
         ImageMagick \
         ack \
-        ant \
-        apache-ivy \
         aria2 \
         astyle \
         bash-completion \
         bat \
-        bazel \
         brotli \
         buildah \
         cargo \
-        checkstyle \
         clang \
         clang-devel \
         coreutils-doc \
@@ -80,7 +76,6 @@ RUN zypper --no-refresh --non-interactive install \
         make \
         man \
         man-pages \
-        maven \
         moreutils \
         npm-default \
         openssl \
@@ -133,6 +128,11 @@ RUN zypper --no-refresh --non-interactive install \
     --auto-agree-with-licenses \
     --force-resolution \
         R-base \
+        ant \
+        apache-ivy \
+        bazel \
+        checkstyle \
+        maven \
 ;
 
 RUN \
