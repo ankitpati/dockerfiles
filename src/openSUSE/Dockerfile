@@ -22,6 +22,13 @@ RUN \
     && \
 true
 
+ARG java_version=19
+ARG libgcc_s_version=1
+ARG libstdcpp_version=6
+ARG libxml_version=2
+ARG psycopg_version=2
+ARG python_version=3
+
 RUN zypper --no-refresh --non-interactive install \
     --allow-name-change \
     --allow-vendor-change \
@@ -63,13 +70,13 @@ RUN zypper --no-refresh --non-interactive install \
         indent \
         iproute \
         iputils \
-        java-devel \
+        java-"$java_version"-openjdk-devel \
         jq \
         kubernetes-client \
-        libgcc_s1-debuginfo \
+        libgcc_s"$libgcc_s_version"-debuginfo \
         libopenssl-devel \
-        libstdc++6-debuginfo \
-        libxml2-tools \
+        libstdc++"$libstdcpp_version"-debuginfo \
+        libxml"$libxml_version"-tools \
         make \
         man \
         man-pages \
@@ -90,14 +97,14 @@ RUN zypper --no-refresh --non-interactive install \
         podman \
         postgresql \
         psmisc \
-        python3 \
-        python3-Django \
-        python3-black \
-        python3-curses \
-        python3-devel \
-        python3-pip \
-        python3-psycopg2 \
-        python3-pylint \
+        python"$python_version" \
+        python"$python_version"-Django \
+        python"$python_version"-black \
+        python"$python_version"-curses \
+        python"$python_version"-devel \
+        python"$python_version"-pip \
+        python"$python_version"-psycopg"$psycopg_version" \
+        python"$python_version"-pylint \
         readline-devel \
         ripgrep \
         ruby \
@@ -127,6 +134,11 @@ RUN zypper --no-refresh --non-interactive install \
     --force-resolution \
         R-base \
 ;
+
+RUN \
+    update-alternatives --set javac /usr/lib64/jvm/java-19-openjdk/bin/javac && \
+    update-alternatives --set java /usr/lib64/jvm/jre-19-openjdk/bin/java && \
+true
 
 ARG username=tigress
 ARG brew_prefix=/home/linuxbrew/.linuxbrew
