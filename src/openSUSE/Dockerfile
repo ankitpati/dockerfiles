@@ -197,6 +197,7 @@ RUN bash -lc '\
 && \
     brew install --ignore-dependencies \
         google-java-format \
+        pmd \
 && \
     cpanm \
         Digest::SHA \
