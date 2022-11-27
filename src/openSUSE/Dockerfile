@@ -195,6 +195,9 @@ RUN bash -lc '\
     brew install \
         shellharden \
 && \
+    brew install --ignore-dependencies \
+        google-java-format \
+&& \
     cpanm \
         Digest::SHA \
 && \
