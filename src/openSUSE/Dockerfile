@@ -29,6 +29,7 @@ ARG libxml_version=2
 ARG openssl_version=3
 ARG psycopg_version=2
 ARG python_version=3
+ARG ruby_version=3.1
 
 RUN zypper --no-refresh --non-interactive install \
     --allow-name-change \
@@ -104,6 +105,7 @@ RUN zypper --no-refresh --non-interactive install \
         readline-devel \
         ripgrep \
         ruby \
+        ruby"$ruby_version"-rubygem-jekyll \
         rust \
         scout-command-not-found \
         shadow \
