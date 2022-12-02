@@ -43,6 +43,7 @@ RUN zypper --no-refresh --non-interactive install \
         astyle \
         bash-completion \
         bat \
+        bison \
         brotli \
         buildah \
         cargo \
@@ -55,6 +56,7 @@ RUN zypper --no-refresh --non-interactive install \
         dwarves \
         fd \
         findutils \
+        flex \
         gcc \
         gcc-c++ \
         gdb \
@@ -81,6 +83,7 @@ RUN zypper --no-refresh --non-interactive install \
         moreutils \
         npm-default \
         openssl-"$openssl_version" \
+        patchutils \
         perl-App-cpanminus \
         perl-File-Rename \
         perl-LWP-Protocol-https \
@@ -102,10 +105,12 @@ RUN zypper --no-refresh --non-interactive install \
         python"$python_version"-pip \
         python"$python_version"-psycopg"$psycopg_version" \
         python"$python_version"-pylint \
+        quilt \
         readline-devel \
         ripgrep \
         ruby \
         ruby"$ruby_version"-rubygem-jekyll \
+        ruby-devel \
         rust \
         scout-command-not-found \
         shadow \
@@ -203,6 +208,9 @@ RUN bash -lc '\
 && \
     cpanm \
         Digest::SHA \
+&& \
+    gem install --user-install --no-format-executable \
+        csvlint \
 && \
     npm install --global npm && hash -r && \
     npm install --global node && \
