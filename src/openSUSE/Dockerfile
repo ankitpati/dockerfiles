@@ -38,6 +38,7 @@ RUN zypper --no-refresh --non-interactive install \
     --force-resolution \
         7zip \
         ImageMagick \
+        ShellCheck \
         ack \
         aria2 \
         astyle \
