@@ -122,6 +122,7 @@ RUN zypper --no-refresh --non-interactive install \
         shadow \
         shfmt \
         skopeo \
+        socat \
         strace \
         tar \
         terminfo \
