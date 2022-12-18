@@ -127,6 +127,7 @@ RUN zypper --no-refresh --non-interactive install \
         socat \
         strace \
         tar \
+        telnet \
         terminfo \
         terraform \
         tidy \
