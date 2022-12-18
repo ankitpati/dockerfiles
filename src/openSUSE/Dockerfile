@@ -134,6 +134,7 @@ RUN zypper --no-refresh --non-interactive install \
         unzip \
         vim \
         vim-data \
+        xorg-x11-server-Xvfb \
         yasm \
         zip \
 ;
