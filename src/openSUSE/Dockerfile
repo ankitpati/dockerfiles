@@ -52,6 +52,7 @@ RUN zypper --no-refresh --non-interactive install \
         cargo \
         clang \
         clang-devel \
+        code \
         coreutils-doc \
         csvprintf \
         curl \
