@@ -14,6 +14,8 @@ RUN \
     ( cd /etc/zypp/repos.d/ && ls | while read -r repofile; do sed -i -E 's,\bhttp://,https://,g' "$repofile"; done ) && \
     zypper modifyrepo --enable repo-debug && \
     zypper addrepo -fp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' packman && \
+    zypper addrepo 'https://packages.microsoft.com/yumrepos/vscode/' vscode && \
+    rpm --import 'https://packages.microsoft.com/keys/microsoft.asc' && \
     zypper --gpg-auto-import-keys --non-interactive dist-upgrade \
         --allow-name-change \
         --allow-vendor-change \
