@@ -83,6 +83,7 @@ RUN zypper --no-refresh --non-interactive install \
         libopenssl-"$openssl_version"-devel \
         libstdc++"$libstdcpp_version"-debuginfo \
         libxml"$libxml_version"-tools \
+        lsof \
         make \
         man \
         man-pages \
