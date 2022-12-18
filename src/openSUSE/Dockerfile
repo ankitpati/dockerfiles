@@ -78,6 +78,7 @@ RUN zypper --no-refresh --non-interactive install \
         java-"$java_version"-openjdk-devel \
         jq \
         kubernetes-client \
+        libcap-progs \
         libgcc_s"$libgcc_s_version"-debuginfo \
         libopenssl-"$openssl_version"-devel \
         libstdc++"$libstdcpp_version"-debuginfo \
