@@ -67,6 +67,7 @@ RUN zypper --no-refresh --non-interactive install \
         git \
         git-delta \
         glibc-debuginfo \
+        gnu-netcat \
         gnu_parallel \
         go \
         go-doc \
