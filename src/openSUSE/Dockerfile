@@ -86,6 +86,7 @@ RUN zypper --no-refresh --non-interactive install \
         man \
         man-pages \
         moreutils \
+        nmap \
         npm-default \
         openssl-"$openssl_version" \
         patchutils \
