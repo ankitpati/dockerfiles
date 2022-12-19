@@ -46,6 +46,7 @@ RUN zypper --no-refresh --non-interactive install \
         astyle \
         bash-completion \
         bat \
+        bind-utils \
         bison \
         brotli \
         buildah \
