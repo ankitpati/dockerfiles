@@ -213,6 +213,7 @@ RUN bash -lc '\
     brew upgrade && \
     brew install \
         shellharden \
+        xq \
 && \
     brew install --ignore-dependencies \
         google-java-format \
