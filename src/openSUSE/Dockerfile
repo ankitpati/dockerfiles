@@ -197,6 +197,8 @@ RUN \
     google-cloud-sdk/install.sh --quiet --command-completion true --path-update true && \
     bash -lc 'gcloud components update --quiet' && \
     \
+    bash -l <(curl 'https://get.sdkman.io') && \
+    \
     bash -l \
         <(curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh' \
           | perl -0pE 's/^have_sudo_access\(\) {.*?^}/have_sudo_access() { HAVE_SUDO_ACCESS=0; return 0; }/sm' \
