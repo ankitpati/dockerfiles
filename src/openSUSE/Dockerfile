@@ -231,6 +231,8 @@ RUN bash -lc '\
     npm install --global node && \
     npm install --global \
         prettier \
+&& \
+    sdk install gradle \
 && B-clean-cache \
 '
 
