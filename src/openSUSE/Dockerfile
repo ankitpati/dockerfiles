@@ -233,7 +233,7 @@ RUN bash -lc '\
         prettier \
 && \
     sdk install gradle \
-&& B-clean-cache \
+&& clean-cache \
 '
 
 ENTRYPOINT ["bash", "-l"]
