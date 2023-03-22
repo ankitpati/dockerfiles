@@ -37,38 +37,6 @@ RUN \
         sort -rV | \
         head -1 \
     } && \
-    java_version="$( \
-        get_latest_package 'java-[0-9]+-openjdk-devel' | \
-        cut -d- -f2 \
-    )" && \
-    libgcc_s_version="$( \
-        get_latest_package 'libgcc_s[0-9]+-debuginfo' | \
-        cut -d- -f1 | \
-        cut -ds -f2 \
-    )" && \
-    libstdcpp_version="$( \
-        get_latest_package 'libstdc\+\+[0-9]+-debuginfo' | \
-        cut -d- -f1 | \
-        cut -d+ -f3 \
-    )" && \
-    libxml_version="$( \
-        get_latest_package 'libxml[0-9]+-tools' | \
-        cut -d- -f1 | \
-        cut -dl -f3 \
-    )" && \
-    psycopg_version="$( \
-        get_latest_package 'python[0-9]+-psycopg[0-9]+' | \
-        cut -dg -f2 \
-    )" && \
-    python_version="$( \
-        get_latest_package 'python[0-9]+' | \
-        cut -dn -f2 \
-    )" && \
-    ruby_version="$( \
-        get_latest_package 'ruby[0-9.]+-rubygem-jekyll' | \
-        cut -d- -f1 | \
-        cut -dy -f2 \
-    )" && \
     \
     zypper \
         --no-refresh \
@@ -78,6 +46,19 @@ RUN \
             --allow-vendor-change \
             --auto-agree-with-licenses \
             --force-resolution \
+            "$(get_latest_package 'java-[0-9]+-openjdk-devel')" \
+            "$(get_latest_package 'libgcc_s[0-9]+-debuginfo')" \
+            "$(get_latest_package 'libstdc\+\+[0-9]+-debuginfo')" \
+            "$(get_latest_package 'libxml[0-9]+-tools')" \
+            "$(get_latest_package 'python[0-9]+')" \
+            "$(get_latest_package 'python[0-9]+-Django')" \
+            "$(get_latest_package 'python[0-9]+-black')" \
+            "$(get_latest_package 'python[0-9]+-curses')" \
+            "$(get_latest_package 'python[0-9]+-devel')" \
+            "$(get_latest_package 'python[0-9]+-pip')" \
+            "$(get_latest_package 'python[0-9]+-psycopg[0-9]+')" \
+            "$(get_latest_package 'python[0-9]+-pylint')" \
+            "$(get_latest_package 'ruby[0-9.]+-rubygem-jekyll')" \
             7zip \
             ImageMagick \
             ShellCheck \
@@ -116,14 +97,10 @@ RUN \
             indent \
             iproute \
             iputils \
-            java-"$java_version"-openjdk-devel \
             jq \
             kubernetes-client \
             libcap-progs \
-            libgcc_s"$libgcc_s_version"-debuginfo \
             libopenssl-devel \
-            libstdc++"$libstdcpp_version"-debuginfo \
-            libxml"$libxml_version"-tools \
             lsof \
             make \
             man \
@@ -146,19 +123,10 @@ RUN \
             podman \
             postgresql \
             psmisc \
-            python"$python_version" \
-            python"$python_version"-Django \
-            python"$python_version"-black \
-            python"$python_version"-curses \
-            python"$python_version"-devel \
-            python"$python_version"-pip \
-            python"$python_version"-psycopg"$psycopg_version" \
-            python"$python_version"-pylint \
             quilt \
             readline-devel \
             ripgrep \
             ruby \
-            ruby"$ruby_version"-rubygem-jekyll \
             ruby-devel \
             rust \
             scout-command-not-found \
