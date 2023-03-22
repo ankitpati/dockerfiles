@@ -24,16 +24,31 @@ RUN \
     && \
 true
 
-ARG java_version=19
-ARG libgcc_s_version=1
-ARG libstdcpp_version=6
-ARG libxml_version=2
-ARG openssl_version=3
-ARG psycopg_version=2
-ARG python_version=3
-ARG ruby_version=3.2
-
-RUN zypper --no-refresh --non-interactive install \
+RUN \
+    java_version="$( \
+        zypper search --case-sensitive 'java-*-openjdk-devel' | \
+        cut -d'|' -f2 | \
+        tr -d ' ' | \
+        grep -P '^java-\d+-openjdk-devel$' | \
+        sort -rV | \
+        head -1 | \
+        cut -d- -f2 \
+    )" && \
+    libgcc_s_version=1 && \
+    libstdcpp_version=6 && \
+    libxml_version=2 && \
+    openssl_version=3 && \
+    psycopg_version=2 && \
+    python_version=3 && \
+    ruby_version="$( \
+        zypper info ruby | \
+        grep -E '^Version\s+:\s+' | \
+        cut -d: -f2 | \
+        tr -d ' ' | \
+        cut -d- -f1 \
+    )" && \
+    \
+    zypper --no-refresh --non-interactive install \
     --allow-name-change \
     --allow-vendor-change \
     --auto-agree-with-licenses \
