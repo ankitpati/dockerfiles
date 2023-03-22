@@ -41,7 +41,15 @@ RUN \
     libstdcpp_version=6 && \
     libxml_version=2 && \
     openssl_version=3 && \
-    psycopg_version=2 && \
+    psycopg_version="$( \
+        zypper --no-refresh --quiet search '/^python[0-9]+-psycopg[0-9]+$/' | \
+        cut -d'|' -f2 | \
+        tr -d ' ' | \
+        grep -E '^python[0-9]+-psycopg[0-9]+$' | \
+        sort -rV | \
+        head -1 | \
+        cut -dg -f2 \
+    )" && \
     python_version="$( \
         zypper --no-refresh --quiet search '/^python[0-9]+$/' | \
         cut -d'|' -f2 | \
