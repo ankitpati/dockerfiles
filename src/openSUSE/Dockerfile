@@ -32,7 +32,7 @@ RUN \
         zypper --no-refresh --quiet search '/^java-[0-9]+-openjdk-devel$/' | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
-        grep -E '^java-[0-9]+-openjdk-devel$' | \
+        grep -vE '^([+-]+|Name|)$' | \
         sort -rV | \
         head -1 | \
         cut -d- -f2 \
@@ -41,7 +41,7 @@ RUN \
         zypper --no-refresh --quiet search '/^libgcc_s[0-9]+-debuginfo$/' | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
-        grep -E '^libgcc_s[0-9]+-debuginfo$' | \
+        grep -vE '^([+-]+|Name|)$' | \
         sort -rV | \
         head -1 | \
         cut -d- -f1 | \
@@ -51,7 +51,7 @@ RUN \
         zypper --no-refresh --quiet search '/^libstdc\+\+[0-9]+-debuginfo$/' | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
-        grep -E '^libstdc\+\+[0-9]+-debuginfo$' | \
+        grep -vE '^([+-]+|Name|)$' | \
         sort -rV | \
         head -1 | \
         cut -d- -f1 | \
@@ -61,7 +61,7 @@ RUN \
         zypper --no-refresh --quiet search '/^libxml[0-9]+-tools$/' | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
-        grep -E '^libxml[0-9]+-tools$' | \
+        grep -vE '^([+-]+|Name|)$' | \
         sort -rV | \
         head -1 | \
         cut -d- -f1 | \
@@ -71,7 +71,7 @@ RUN \
         zypper --no-refresh --quiet search '/^python[0-9]+-psycopg[0-9]+$/' | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
-        grep -E '^python[0-9]+-psycopg[0-9]+$' | \
+        grep -vE '^([+-]+|Name|)$' | \
         sort -rV | \
         head -1 | \
         cut -dg -f2 \
@@ -80,7 +80,7 @@ RUN \
         zypper --no-refresh --quiet search '/^python[0-9]+$/' | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
-        grep -E '^python[0-9]+$' | \
+        grep -vE '^([+-]+|Name|)$' | \
         sort -rV | \
         head -1 | \
         cut -dn -f2 \
