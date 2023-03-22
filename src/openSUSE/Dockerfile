@@ -30,7 +30,7 @@ true
 RUN \
     get_latest_package() \
     { \
-        zypper --no-refresh --quiet search "$1" | \
+        zypper --no-refresh --quiet search "/^$1\$/" | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
         grep -vE '^([+-]+|Name|)$' | \
@@ -38,34 +38,34 @@ RUN \
         head -1 \
     } && \
     java_version="$( \
-        get_latest_package '/^java-[0-9]+-openjdk-devel$/' | \
+        get_latest_package 'java-[0-9]+-openjdk-devel' | \
         cut -d- -f2 \
     )" && \
     libgcc_s_version="$( \
-        get_latest_package '/^libgcc_s[0-9]+-debuginfo$/' | \
+        get_latest_package 'libgcc_s[0-9]+-debuginfo' | \
         cut -d- -f1 | \
         cut -ds -f2 \
     )" && \
     libstdcpp_version="$( \
-        get_latest_package '/^libstdc\+\+[0-9]+-debuginfo$/' | \
+        get_latest_package 'libstdc\+\+[0-9]+-debuginfo' | \
         cut -d- -f1 | \
         cut -d+ -f3 \
     )" && \
     libxml_version="$( \
-        get_latest_package '/^libxml[0-9]+-tools$/' | \
+        get_latest_package 'libxml[0-9]+-tools' | \
         cut -d- -f1 | \
         cut -dl -f3 \
     )" && \
     psycopg_version="$( \
-        get_latest_package '/^python[0-9]+-psycopg[0-9]+$/' | \
+        get_latest_package 'python[0-9]+-psycopg[0-9]+' | \
         cut -dg -f2 \
     )" && \
     python_version="$( \
-        get_latest_package '/^python[0-9]+$/' | \
+        get_latest_package 'python[0-9]+' | \
         cut -dn -f2 \
     )" && \
     ruby_version="$( \
-        get_latest_package '/^ruby[0-9.]+-rubygem-jekyll$/' | \
+        get_latest_package 'ruby[0-9.]+-rubygem-jekyll' | \
         cut -d- -f1 | \
         cut -dy -f2 \
     )" && \
