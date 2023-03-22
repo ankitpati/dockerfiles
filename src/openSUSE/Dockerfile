@@ -40,7 +40,6 @@ RUN \
     libgcc_s_version=1 && \
     libstdcpp_version=6 && \
     libxml_version=2 && \
-    openssl_version=3 && \
     psycopg_version="$( \
         zypper --no-refresh --quiet search '/^python[0-9]+-psycopg[0-9]+$/' | \
         cut -d'|' -f2 | \
@@ -118,7 +117,7 @@ RUN \
             kubernetes-client \
             libcap-progs \
             libgcc_s"$libgcc_s_version"-debuginfo \
-            libopenssl-"$openssl_version"-devel \
+            libopenssl-devel \
             libstdc++"$libstdcpp_version"-debuginfo \
             libxml"$libxml_version"-tools \
             lsof \
@@ -128,7 +127,7 @@ RUN \
             moreutils \
             nmap \
             npm-default \
-            openssl-"$openssl_version" \
+            openssl \
             patchutils \
             perl-App-cpanminus \
             perl-File-Rename \
