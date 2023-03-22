@@ -198,6 +198,7 @@ RUN \
             tmux \
             tree \
             unzip \
+            util-linux-tty-tools \
             vim \
             vim-data \
             xorg-x11-server-Xvfb \
