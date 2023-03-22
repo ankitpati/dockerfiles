@@ -65,11 +65,9 @@ RUN \
         cut -dn -f2 \
     )" && \
     ruby_version="$( \
-        zypper --no-refresh info ruby | \
-        grep -E '^Version\s+:\s+' | \
-        cut -d: -f2 | \
-        tr -d ' ' | \
-        cut -d- -f1 \
+        get_latest_package '/^ruby[0-9.]+-rubygem-jekyll$/' | \
+        cut -d- -f1 | \
+        cut -dy -f2 \
     )" && \
     \
     zypper \
