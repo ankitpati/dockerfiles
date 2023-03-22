@@ -28,14 +28,17 @@ RUN \
 true
 
 RUN \
-    get_latest_package() \
+    get_latest_packages() \
     { \
-        zypper --no-refresh --quiet search "/^$1\$/" | \
-        cut -d'|' -f2 | \
-        tr -d ' ' | \
-        grep -vE '^([+-]+|Name|)$' | \
-        sort -rV | \
-        head -1 \
+        for package_regex in "$@"; \
+        do \
+            zypper --no-refresh --quiet search "/^$package_regex\$/" | \
+            cut -d'|' -f2 | \
+            tr -d ' ' | \
+            grep -vE '^([+-]+|Name|)$' | \
+            sort -rV | \
+            head -1; \
+        done; \
     } && \
     \
     zypper \
@@ -46,19 +49,21 @@ RUN \
             --allow-vendor-change \
             --auto-agree-with-licenses \
             --force-resolution \
-            "$(get_latest_package 'java-[0-9]+-openjdk-devel')" \
-            "$(get_latest_package 'libgcc_s[0-9]+-debuginfo')" \
-            "$(get_latest_package 'libstdc\+\+[0-9]+-debuginfo')" \
-            "$(get_latest_package 'libxml[0-9]+-tools')" \
-            "$(get_latest_package 'python[0-9]+')" \
-            "$(get_latest_package 'python[0-9]+-Django')" \
-            "$(get_latest_package 'python[0-9]+-black')" \
-            "$(get_latest_package 'python[0-9]+-curses')" \
-            "$(get_latest_package 'python[0-9]+-devel')" \
-            "$(get_latest_package 'python[0-9]+-pip')" \
-            "$(get_latest_package 'python[0-9]+-psycopg[0-9]+')" \
-            "$(get_latest_package 'python[0-9]+-pylint')" \
-            "$(get_latest_package 'ruby[0-9.]+-rubygem-jekyll')" \
+            "$(get_latest_packages \
+                'java-[0-9]+-openjdk-devel' \
+                'libgcc_s[0-9]+-debuginfo' \
+                'libstdc\+\+[0-9]+-debuginfo' \
+                'libxml[0-9]+-tools' \
+                'python[0-9]+' \
+                'python[0-9]+-Django' \
+                'python[0-9]+-black' \
+                'python[0-9]+-curses' \
+                'python[0-9]+-devel' \
+                'python[0-9]+-pip' \
+                'python[0-9]+-psycopg[0-9]+' \
+                'python[0-9]+-pylint' \
+                'ruby[0-9.]+-rubygem-jekyll' \
+            )" \
             7zip \
             ImageMagick \
             ShellCheck \
