@@ -37,7 +37,16 @@ RUN \
         head -1 | \
         cut -d- -f2 \
     )" && \
-    libgcc_s_version=1 && \
+    libgcc_s_version="$( \
+        zypper --no-refresh --quiet search '/^libgcc_s[0-9]+-debuginfo$/' | \
+        cut -d'|' -f2 | \
+        tr -d ' ' | \
+        grep -E '^libgcc_s[0-9]+-debuginfo$' | \
+        sort -rV | \
+        head -1 | \
+        cut -d- -f1 | \
+        cut -ds -f2 \
+    )" && \
     libstdcpp_version="$( \
         zypper --no-refresh --quiet search '/^libstdc\+\+[0-9]+-debuginfo$/' | \
         cut -d'|' -f2 | \
