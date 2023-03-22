@@ -29,10 +29,10 @@ true
 
 RUN \
     java_version="$( \
-        zypper search --case-sensitive 'java-*-openjdk-devel' | \
+        zypper --no-refresh --quiet search '/^java-[0-9]+-openjdk-devel$/' | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
-        grep -P '^java-\d+-openjdk-devel$' | \
+        grep -E '^java-[0-9]+-openjdk-devel$' | \
         sort -rV | \
         head -1 | \
         cut -d- -f2 \
@@ -44,7 +44,7 @@ RUN \
     psycopg_version=2 && \
     python_version=3 && \
     ruby_version="$( \
-        zypper info ruby | \
+        zypper --no-refresh info ruby | \
         grep -E '^Version\s+:\s+' | \
         cut -d: -f2 | \
         tr -d ' ' | \
