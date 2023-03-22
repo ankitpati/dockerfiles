@@ -31,7 +31,7 @@ ARG libxml_version=2
 ARG openssl_version=3
 ARG psycopg_version=2
 ARG python_version=3
-ARG ruby_version=3.1
+ARG ruby_version=3.2
 
 RUN zypper --no-refresh --non-interactive install \
     --allow-name-change \
