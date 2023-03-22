@@ -38,8 +38,26 @@ RUN \
         cut -d- -f2 \
     )" && \
     libgcc_s_version=1 && \
-    libstdcpp_version=6 && \
-    libxml_version=2 && \
+    libstdcpp_version="$( \
+        zypper --no-refresh --quiet search '/^libstdc\+\+[0-9]+-debuginfo$/' | \
+        cut -d'|' -f2 | \
+        tr -d ' ' | \
+        grep -E '^libstdc\+\+[0-9]+-debuginfo$' | \
+        sort -rV | \
+        head -1 | \
+        cut -d- -f1 | \
+        cut -d+ -f3 \
+    )" && \
+    libxml_version="$( \
+        zypper --no-refresh --quiet search '/^libxml[0-9]+-tools$/' | \
+        cut -d'|' -f2 | \
+        tr -d ' ' | \
+        grep -E '^libxml[0-9]+-tools$' | \
+        sort -rV | \
+        head -1 | \
+        cut -d- -f1 | \
+        cut -dl -f3 \
+    )" && \
     psycopg_version="$( \
         zypper --no-refresh --quiet search '/^python[0-9]+-psycopg[0-9]+$/' | \
         cut -d'|' -f2 | \
