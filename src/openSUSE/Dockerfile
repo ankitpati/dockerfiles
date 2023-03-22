@@ -28,61 +28,40 @@ RUN \
 true
 
 RUN \
-    java_version="$( \
-        zypper --no-refresh --quiet search '/^java-[0-9]+-openjdk-devel$/' | \
+    get_latest_package() \
+    { \
+        zypper --no-refresh --quiet search "$1" | \
         cut -d'|' -f2 | \
         tr -d ' ' | \
         grep -vE '^([+-]+|Name|)$' | \
         sort -rV | \
-        head -1 | \
+        head -1 \
+    } && \
+    java_version="$( \
+        get_latest_package '/^java-[0-9]+-openjdk-devel$/' | \
         cut -d- -f2 \
     )" && \
     libgcc_s_version="$( \
-        zypper --no-refresh --quiet search '/^libgcc_s[0-9]+-debuginfo$/' | \
-        cut -d'|' -f2 | \
-        tr -d ' ' | \
-        grep -vE '^([+-]+|Name|)$' | \
-        sort -rV | \
-        head -1 | \
+        get_latest_package '/^libgcc_s[0-9]+-debuginfo$/' | \
         cut -d- -f1 | \
         cut -ds -f2 \
     )" && \
     libstdcpp_version="$( \
-        zypper --no-refresh --quiet search '/^libstdc\+\+[0-9]+-debuginfo$/' | \
-        cut -d'|' -f2 | \
-        tr -d ' ' | \
-        grep -vE '^([+-]+|Name|)$' | \
-        sort -rV | \
-        head -1 | \
+        get_latest_package '/^libstdc\+\+[0-9]+-debuginfo$/' | \
         cut -d- -f1 | \
         cut -d+ -f3 \
     )" && \
     libxml_version="$( \
-        zypper --no-refresh --quiet search '/^libxml[0-9]+-tools$/' | \
-        cut -d'|' -f2 | \
-        tr -d ' ' | \
-        grep -vE '^([+-]+|Name|)$' | \
-        sort -rV | \
-        head -1 | \
+        get_latest_package '/^libxml[0-9]+-tools$/' | \
         cut -d- -f1 | \
         cut -dl -f3 \
     )" && \
     psycopg_version="$( \
-        zypper --no-refresh --quiet search '/^python[0-9]+-psycopg[0-9]+$/' | \
-        cut -d'|' -f2 | \
-        tr -d ' ' | \
-        grep -vE '^([+-]+|Name|)$' | \
-        sort -rV | \
-        head -1 | \
+        get_latest_package '/^python[0-9]+-psycopg[0-9]+$/' | \
         cut -dg -f2 \
     )" && \
     python_version="$( \
-        zypper --no-refresh --quiet search '/^python[0-9]+$/' | \
-        cut -d'|' -f2 | \
-        tr -d ' ' | \
-        grep -vE '^([+-]+|Name|)$' | \
-        sort -rV | \
-        head -1 | \
+        get_latest_package '/^python[0-9]+$/' | \
         cut -dn -f2 \
     )" && \
     ruby_version="$( \
