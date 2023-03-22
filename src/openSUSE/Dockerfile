@@ -41,6 +41,22 @@ RUN \
         done; \
     } && \
     \
+    mapfile -t versioned_packages < <(get_latest_packages \
+        'java-[0-9]+-openjdk-devel' \
+        'libgcc_s[0-9]+-debuginfo' \
+        'libstdc\+\+[0-9]+-debuginfo' \
+        'libxml[0-9]+-tools' \
+        'python[0-9]+' \
+        'python[0-9]+-Django' \
+        'python[0-9]+-black' \
+        'python[0-9]+-curses' \
+        'python[0-9]+-devel' \
+        'python[0-9]+-pip' \
+        'python[0-9]+-psycopg[0-9]+' \
+        'python[0-9]+-pylint' \
+        'ruby[0-9.]+-rubygem-jekyll' \
+    ) && \
+    \
     zypper \
         --no-refresh \
         --non-interactive \
@@ -49,21 +65,7 @@ RUN \
             --allow-vendor-change \
             --auto-agree-with-licenses \
             --force-resolution \
-            $(get_latest_packages \
-                'java-[0-9]+-openjdk-devel' \
-                'libgcc_s[0-9]+-debuginfo' \
-                'libstdc\+\+[0-9]+-debuginfo' \
-                'libxml[0-9]+-tools' \
-                'python[0-9]+' \
-                'python[0-9]+-Django' \
-                'python[0-9]+-black' \
-                'python[0-9]+-curses' \
-                'python[0-9]+-devel' \
-                'python[0-9]+-pip' \
-                'python[0-9]+-psycopg[0-9]+' \
-                'python[0-9]+-pylint' \
-                'ruby[0-9.]+-rubygem-jekyll' \
-            ) \
+            "${versioned_packages[@]}" \
             7zip \
             ImageMagick \
             ShellCheck \
