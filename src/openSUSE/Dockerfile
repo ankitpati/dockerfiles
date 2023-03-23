@@ -174,10 +174,16 @@ RUN zypper \
             maven \
 ;
 
-RUN \
-    update-alternatives --set javac /usr/lib64/jvm/java-19-openjdk/bin/javac && \
-    update-alternatives --set java /usr/lib64/jvm/jre-19-openjdk/bin/java && \
-true
+RUN update-alternatives --get-selections | \
+    cut -d' ' -f1 | \
+    grep -v '^ld$' | \
+    while read -r invocable; \
+    do \
+        update-alternatives --list "$invocable" | \
+        sort -rV | \
+        head -n 1 | \
+        xargs update-alternatives --set "$invocable"; \
+    done
 
 ARG username=tigress
 ARG brew_prefix=/home/linuxbrew/.linuxbrew
