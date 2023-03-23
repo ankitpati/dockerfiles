@@ -37,7 +37,7 @@ RUN \
             tr -d ' ' | \
             grep -vE '^([+-]+|Name|)$' | \
             sort -rV | \
-            head -1; \
+            head -n 1; \
         done; \
     } && \
     \
