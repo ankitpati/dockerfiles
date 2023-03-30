@@ -239,6 +239,7 @@ RUN bash -lc '\
     brew update && \
     brew upgrade && \
     brew install \
+        bazelisk \
         shellharden \
         xq \
 && \
@@ -258,6 +259,8 @@ RUN bash -lc '\
         prettier \
 && \
     sdk install gradle \
+&& \
+    bazel version \
 && clean-cache \
 '
 
