@@ -169,7 +169,6 @@ RUN zypper \
             R-base \
             ant \
             apache-ivy \
-            bazel \
             checkstyle \
             maven \
 ;
