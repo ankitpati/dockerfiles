@@ -43,6 +43,7 @@ RUN \
     \
     mapfile -t versioned_packages < <(get_latest_packages \
         'java-[0-9]+-openjdk-devel' \
+        'java-[0-9]+-openjdk-jmods' \
         'libgcc_s[0-9]+-debuginfo' \
         'libstdc\+\+[0-9]+-debuginfo' \
         'libxml[0-9]+-tools' \
