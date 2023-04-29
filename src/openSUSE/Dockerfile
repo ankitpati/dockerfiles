@@ -143,6 +143,8 @@ RUN \
             skopeo \
             socat \
             strace \
+            susepaste \
+            susepaste-screenshot \
             tar \
             telnet \
             terminfo \
