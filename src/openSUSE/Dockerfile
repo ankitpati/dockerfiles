@@ -85,6 +85,7 @@ RUN \
             clang-devel \
             code \
             coreutils-doc \
+            cpio \
             csvprintf \
             curl \
             dos2unix \
