@@ -15,6 +15,7 @@ RUN \
     zypper modifyrepo --enable repo-debug && \
     zypper addrepo -fp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' packman && \
     zypper addrepo 'https://packages.microsoft.com/yumrepos/vscode/' vscode && \
+    zypper addrepo 'https://packages.microsoft.com/opensuse/15/prod/' microsoft-opensuse && \
     rpm --import 'https://packages.microsoft.com/keys/microsoft.asc' && \
     zypper \
         --gpg-auto-import-keys \
@@ -42,6 +43,7 @@ RUN \
     } && \
     \
     mapfile -t versioned_packages < <(get_latest_packages \
+        'dotnet-sdk-[0-9.]+' \
         'java-[0-9]+-openjdk-devel' \
         'java-[0-9]+-openjdk-jmods' \
         'libgcc_s[0-9]+-debuginfo' \
