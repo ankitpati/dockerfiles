@@ -56,6 +56,7 @@ RUN \
         'python[0-9]+-psycopg[0-9]+' \
         'python[0-9]+-pylint' \
         'ruby[0-9.]+-rubygem-jekyll' \
+        'xdelta[0-9]+' \
     ) && \
     \
     zypper \
