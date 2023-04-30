@@ -266,6 +266,9 @@ RUN bash -lc '\
 && \
     sdk install gradle \
 && \
+    dotnet tool install --global \
+        PowerShell \
+&& \
     bazel version \
 && clean-cache \
 '
