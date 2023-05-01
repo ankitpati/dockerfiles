@@ -98,6 +98,7 @@ RUN \
             gcc \
             gcc-c++ \
             gdb \
+            ghostscript \
             git \
             git-delta \
             glibc-debuginfo \
