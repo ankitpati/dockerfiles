@@ -134,6 +134,7 @@ RUN \
             perl-Unicode-LineBreak \
             perl-doc \
             podman \
+            poppler-tools \
             postgresql \
             psmisc \
             quilt \
