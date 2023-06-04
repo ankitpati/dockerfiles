@@ -165,6 +165,8 @@ RUN \
             vim-data \
             xorg-x11-server-Xvfb \
             yasm \
+            youtube-dl \
+            youtube-dl-bash-completion \
             zip \
 ;
 
