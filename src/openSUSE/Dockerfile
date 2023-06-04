@@ -106,6 +106,7 @@ RUN \
             gnu_parallel \
             go \
             go-doc \
+            gron \
             gzip \
             indent \
             iproute \
