@@ -54,6 +54,7 @@ RUN \
         'python[0-9]+-black' \
         'python[0-9]+-curses' \
         'python[0-9]+-devel' \
+        'python[0-9]+-flake8' \
         'python[0-9]+-pip' \
         'python[0-9]+-psycopg[0-9]+' \
         'python[0-9]+-pylint' \
