@@ -140,6 +140,7 @@ RUN \
             psmisc \
             quilt \
             readline-devel \
+            redis \
             ripgrep \
             ruby \
             ruby-devel \
