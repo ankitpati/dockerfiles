@@ -270,6 +270,7 @@ RUN bash -lc '\
     npm install --global npm && hash -r && \
     npm install --global node && \
     npm install --global \
+        eslint \
         prettier \
 && \
     sdk install gradle \
