@@ -3,7 +3,7 @@ FROM opensuse/tumbleweed
 LABEL org.opencontainers.image.authors="Ankit Pati <contact@ankitpati.in>"
 LABEL org.opencontainers.image.description="Ultimate command-line development environment for cloud, infrastructure, backend, and frontend applications."
 LABEL org.opencontainers.image.licenses="GPL-3.0-or-later"
-LABEL org.opencontainers.image.source="https://gitlab.com/ankitpati/dockerfiles/-/raw/main/src/OpenSUSE/Dockerfile"
+LABEL org.opencontainers.image.source="https://gitlab.com/ankitpati/dockerfiles/-/raw/main/src/openSUSE/Dockerfile"
 LABEL org.opencontainers.image.title="Ultimate Command-Line Development Container"
 LABEL org.opencontainers.image.url="https://quay.io/ankitpati/tigress"
 LABEL org.opencontainers.image.vendor="Ankit Pati"
