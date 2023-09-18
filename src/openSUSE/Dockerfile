@@ -110,6 +110,7 @@ RUN \
             go-doc \
             gron \
             gzip \
+            hostname \
             indent \
             iproute \
             iputils \
