@@ -49,6 +49,7 @@ RUN \
         'libgcc_s[0-9]+-debuginfo' \
         'libstdc\+\+[0-9]+-debuginfo' \
         'libxml[0-9]+-tools' \
+        'lua[0-9]+' \
         'python[0-9]+' \
         'python[0-9]+-Django' \
         'python[0-9]+-black' \
