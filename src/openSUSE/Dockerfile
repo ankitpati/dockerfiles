@@ -124,6 +124,7 @@ RUN \
             man \
             man-pages \
             moreutils \
+            neovim \
             nmap \
             npm-default \
             openssl \
