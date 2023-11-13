@@ -187,7 +187,6 @@ RUN zypper \
             R-base \
             ant \
             apache-ivy \
-            checkstyle \
             maven \
 ;
 
@@ -261,6 +260,7 @@ RUN bash -lc '\
         xq \
 && \
     brew install --ignore-dependencies \
+        checkstyle \
         google-java-format \
         pmd \
 && \
