@@ -60,7 +60,7 @@ RUN \
         'python[0-9]+-pip' \
         'python[0-9]+-psycopg[0-9]+' \
         'python[0-9]+-pylint' \
-        'ruby[0-9.]+-rubygem-jekyll' \
+        'ruby[0-9.]+-rubygem-html2haml' \
         'xdelta[0-9]+' \
     ) && \
     \
@@ -161,7 +161,6 @@ RUN \
             tar \
             telnet \
             terminfo \
-            terraform \
             tidy \
             tmux \
             tree \
@@ -252,11 +251,15 @@ RUN \
 true
 
 RUN bash -lc '\
+    brew tap \
+        hashicorp/tap \
+&& \
     brew update && \
     brew upgrade && \
     brew install \
         bazelisk \
         shellharden \
+        terraform \
         xq \
 && \
     brew install --ignore-dependencies \
