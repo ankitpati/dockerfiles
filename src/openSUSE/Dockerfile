@@ -258,8 +258,8 @@ RUN bash -lc '\
     brew upgrade && \
     brew install \
         bazelisk \
+        hashicorp/tap/terraform \
         shellharden \
-        terraform \
         xq \
 && \
     brew install --ignore-dependencies \
