@@ -225,6 +225,7 @@ RUN \
     \
     git clone --depth=1 'https://gitlab.com/ankitpati/scripts.git' && \
     make -C scripts/ install && \
+    mv scripts/src/Brewfile "$HOME/Brewfile" && \
     rm -rf scripts/ && \
     \
     mkdir -p "$HOME/.postgresql/" && \
@@ -251,21 +252,7 @@ RUN \
 true
 
 RUN bash -lc '\
-    brew tap \
-        hashicorp/tap \
-&& \
-    brew update && \
-    brew upgrade && \
-    brew install \
-        bazelisk \
-        hashicorp/tap/terraform \
-        shellharden \
-        xq \
-&& \
-    brew install --ignore-dependencies \
-        checkstyle \
-        google-java-format \
-        pmd \
+    brew bundle \
 && \
     cpanm \
         Digest::SHA \
