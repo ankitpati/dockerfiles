@@ -273,7 +273,7 @@ RUN bash -lc '\
 && \
     bazel version \
 && \
-    rm --force \
+    rm \
         Brewfile \
 && clean-cache \
 '
