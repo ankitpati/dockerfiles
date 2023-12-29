@@ -272,6 +272,9 @@ RUN bash -lc '\
         PowerShell \
 && \
     bazel version \
+&& \
+    rm --force \
+        Brewfile \
 && clean-cache \
 '
 
