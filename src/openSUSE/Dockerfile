@@ -130,6 +130,7 @@ RUN \
             nmap \
             npm-default \
             openssl \
+            opentofu \
             patchutils \
             perl-App-cpanminus \
             perl-File-Rename \
