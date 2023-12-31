@@ -78,6 +78,7 @@ RUN \
             ShellCheck \
             ack \
             aria2 \
+            arkade \
             astyle \
             bash-completion \
             bat \
