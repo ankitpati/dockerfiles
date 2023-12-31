@@ -112,6 +112,7 @@ RUN \
             go-doc \
             gron \
             gzip \
+            helm \
             hostname \
             indent \
             iproute \
