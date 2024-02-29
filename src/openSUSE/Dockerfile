@@ -83,6 +83,7 @@ RUN \
             bash-completion \
             bat \
             bind-utils \
+            binwalk \
             bison \
             brotli \
             buildah \
