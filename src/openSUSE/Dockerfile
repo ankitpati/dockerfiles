@@ -209,6 +209,8 @@ ARG username=tigress
 ARG brew_prefix=/home/linuxbrew/.linuxbrew
 
 RUN \
+    mkdir /run/tmux && \
+    chmod 1777 /run/tmux && \
     useradd "$username" && \
     mkdir -p "$brew_prefix" && \
     chmod 0700 "$brew_prefix" && \
