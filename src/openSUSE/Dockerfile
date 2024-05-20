@@ -130,6 +130,7 @@ RUN \
             neovim \
             nmap \
             npm-default \
+            openssh \
             openssl \
             opentofu \
             patchutils \
