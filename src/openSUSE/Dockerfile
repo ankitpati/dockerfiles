@@ -134,6 +134,7 @@ RUN \
             openssl \
             opentofu \
             patchutils \
+            pdftk \
             perl-App-cpanminus \
             perl-File-Rename \
             perl-LWP-Protocol-https \
