@@ -175,7 +175,7 @@ RUN \
             vim-data \
             xorg-x11-server-Xvfb \
             yasm \
-            youtube-dl \
+            yt-dlp \
             zip \
 ;
 
