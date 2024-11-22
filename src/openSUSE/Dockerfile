@@ -43,7 +43,6 @@ RUN \
     } && \
     \
     mapfile -t versioned_packages < <(get_latest_packages \
-        'dotnet-sdk-[0-9.]+' \
         'java-[0-9]+-openjdk-devel' \
         'java-[0-9]+-openjdk-jmods' \
         'libgcc_s[0-9]+-debuginfo' \
@@ -271,9 +270,6 @@ RUN bash -lc '\
         prettier \
 && \
     sdk install gradle \
-&& \
-    dotnet tool install --global \
-        PowerShell \
 && \
     bazel version \
 && \
