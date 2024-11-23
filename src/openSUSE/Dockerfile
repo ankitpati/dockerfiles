@@ -150,7 +150,6 @@ RUN \
             psmisc \
             quilt \
             readline-devel \
-            redis \
             ripgrep \
             ruby \
             ruby-devel \
@@ -171,6 +170,7 @@ RUN \
             tree \
             unzip \
             util-linux-tty-tools \
+            valkey \
             vim \
             vim-data \
             xorg-x11-server-Xvfb \
