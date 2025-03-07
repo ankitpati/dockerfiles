@@ -86,6 +86,7 @@ RUN \
             bison \
             brotli \
             buildah \
+            buildpacks-cli \
             cargo \
             clang \
             clang-devel \
@@ -95,6 +96,7 @@ RUN \
             csvprintf \
             curl \
             diff-pdf \
+            dive \
             dos2unix \
             dwarves \
             fd \
@@ -119,13 +121,16 @@ RUN \
             iproute \
             iputils \
             jq \
+            kind \
             kubernetes-client \
+            kustomize \
             libcap-progs \
             libopenssl-devel \
             lsof \
             make \
             man \
             man-pages \
+            mergiraf \
             moreutils \
             neovim \
             nmap \
@@ -160,6 +165,8 @@ RUN \
             shfmt \
             skopeo \
             socat \
+            steampipe \
+            stern \
             strace \
             susepaste \
             susepaste-screenshot \
