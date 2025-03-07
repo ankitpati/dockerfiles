@@ -94,6 +94,7 @@ RUN \
             cpio \
             csvprintf \
             curl \
+            diff-pdf \
             dos2unix \
             dwarves \
             fd \
