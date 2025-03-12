@@ -116,6 +116,7 @@ RUN \
             gron \
             gzip \
             helm \
+            hexyl \
             hostname \
             indent \
             iproute \
