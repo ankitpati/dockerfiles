@@ -183,6 +183,7 @@ RUN \
             valkey \
             vim \
             vim-data \
+            werf \
             xorg-x11-server-Xvfb \
             yasm \
             yt-dlp \
