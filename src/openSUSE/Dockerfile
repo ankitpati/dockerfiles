@@ -133,6 +133,7 @@ RUN \
             man-pages \
             mergiraf \
             moreutils \
+            nelm \
             neovim \
             nmap \
             npm-default \
