@@ -118,6 +118,7 @@ RUN \
             helm \
             hexyl \
             hostname \
+            hurl \
             indent \
             iproute \
             iputils \
