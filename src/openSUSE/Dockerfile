@@ -133,6 +133,8 @@ RUN \
             man \
             man-pages \
             mergiraf \
+            mesheryctl \
+            mesheryctl-bash-completion \
             moreutils \
             nelm \
             neovim \
