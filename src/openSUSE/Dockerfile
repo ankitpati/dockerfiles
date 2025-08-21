@@ -184,6 +184,7 @@ RUN \
             unzip \
             util-linux-tty-tools \
             valkey \
+            vegeta \
             vim \
             vim-data \
             werf \
