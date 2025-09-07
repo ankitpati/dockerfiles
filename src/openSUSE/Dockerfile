@@ -102,6 +102,7 @@ RUN \
             fd \
             findutils \
             flex \
+            fortio \
             gcc \
             gcc-c++ \
             gdb \
