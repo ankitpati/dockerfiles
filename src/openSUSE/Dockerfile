@@ -109,6 +109,7 @@ RUN \
             ghostscript \
             git \
             git-delta \
+            git-filter-repo \
             glibc-debuginfo \
             gnu-netcat \
             gnu_parallel \
