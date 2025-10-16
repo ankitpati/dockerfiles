@@ -119,6 +119,7 @@ RUN \
             gzip \
             helm \
             hexyl \
+            highlight \
             hostname \
             hurl \
             indent \
