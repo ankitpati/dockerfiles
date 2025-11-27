@@ -162,6 +162,7 @@ RUN \
             poppler-tools \
             postgresql \
             psmisc \
+            pv \
             quilt \
             readline-devel \
             ripgrep \
