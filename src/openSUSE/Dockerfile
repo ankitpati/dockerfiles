@@ -99,6 +99,7 @@ RUN \
             dive \
             dos2unix \
             dwarves \
+            exiftool \
             fd \
             findutils \
             flex \
