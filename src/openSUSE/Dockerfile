@@ -59,6 +59,7 @@ RUN \
         'python[0-9]+-pip' \
         'python[0-9]+-psycopg[0-9]+' \
         'python[0-9]+-pylint' \
+        'python[0-9]+-zxcvbn' \
         'ruby[0-9.]+-rubygem-html2haml' \
         'xdelta[0-9]+' \
     ) && \
