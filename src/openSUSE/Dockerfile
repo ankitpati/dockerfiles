@@ -164,6 +164,7 @@ RUN \
             perl-Term-ReadLine-Gnu \
             perl-Unicode-LineBreak \
             perl-doc \
+            pnpm \
             podman \
             poppler-tools \
             postgresql \
