@@ -133,6 +133,7 @@ RUN \
             jq \
             just \
             kind \
+            kubectl-explore \
             kubernetes-client \
             kustomize \
             libcap-progs \
