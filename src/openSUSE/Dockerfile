@@ -95,6 +95,7 @@ RUN \
             cargo \
             clang \
             clang-devel \
+            cnf-bash \
             code \
             coreutils-doc \
             cpio \
@@ -178,7 +179,6 @@ RUN \
             ruby \
             ruby-devel \
             rust \
-            scout-command-not-found \
             shadow \
             shfmt \
             skopeo \
