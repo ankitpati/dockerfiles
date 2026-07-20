@@ -46,8 +46,6 @@ RUN \
     mapfile -t versioned_packages < <(get_latest_packages \
         'java-[0-9]+-openjdk-devel' \
         'java-[0-9]+-openjdk-jmods' \
-        'libgcc_s[0-9]+-debuginfo' \
-        'libstdc\+\+[0-9]+-debuginfo' \
         'libxml[0-9]+-tools' \
         'lua[0-9]+' \
         'python[0-9]+' \
@@ -64,7 +62,7 @@ RUN \
         'python[0-9]+-ty' \
         'python[0-9]+-uv' \
         'python[0-9]+-zxcvbn' \
-        'ruby[0-9.]+-rubygem-html2haml' \
+        'ruby[0-9.]+-rubygem-haml' \
         'xdelta[0-9]+' \
     ) && \
     \
@@ -130,7 +128,7 @@ RUN \
             hostname \
             hurl \
             indent \
-            iproute \
+            iproute2 \
             iputils \
             jq \
             just \
